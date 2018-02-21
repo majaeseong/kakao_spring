@@ -1,0 +1,41 @@
+body{
+	background-color:#F9E232;
+}
+.login {
+	display:flex;
+	width:100%;
+	height:100%;
+	flex-direction:column;
+	align-itmes:space-between;
+}
+.login_column {
+	display:flex;
+	flex:1;
+	align-items:center;
+	justify-content:center
+}
+
+::placeholder {
+	color:#CAC1B7;
+	
+}
+input {
+	width:315px;
+	height:55px;
+	font-size:20px;
+	padding-left:15px
+}
+input[type=submit]{
+	background-color:#F6F6F6;
+	padding: 10px;
+}
+
+input:last-child{
+	margin-top:10px
+}
+.find_pass{
+	background-color:#F9E232;
+	color:#CAC1B7;
+	border-radius:10px;
+	font-size:20px;
+}
