@@ -20,4 +20,11 @@ public class HomeController {
 		return "login";
 	}
 	
+	@RequestMapping(value = "/friends", method = RequestMethod.GET)
+	public String friends(Model model) {
+		
+		return "friends";
+		
+	}
+	
 }
