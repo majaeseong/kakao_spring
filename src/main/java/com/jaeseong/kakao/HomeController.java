@@ -27,4 +27,18 @@ public class HomeController {
 		
 	}
 	
+	@RequestMapping(value = "/chats", method = RequestMethod.GET)
+	public String chats(Model model) {
+		
+		return "chats";
+		
+	}
+	
+	@RequestMapping(value = "/more", method = RequestMethod.GET)
+	public String more(Model model) {
+		
+		return "more";
+		
+	}
+	
 }

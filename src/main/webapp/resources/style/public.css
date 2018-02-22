@@ -4,3 +4,23 @@ a{
 .selected{
 	color:white;
 }
+
+.nav_menu {
+	flex:1;
+	background-color:#423630;
+	color:#423630;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:space-between
+}
+.nav_list{
+	flex:1;
+	display:flex;
+	flex-direction:column;
+	margin-top:45px;
+	
+}
+.nav_list:last-child{
+	justify-content:flex-end
+}

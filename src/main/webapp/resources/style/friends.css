@@ -10,26 +10,6 @@
 	margin :15px;
 }
 
-.friends_menu {
-	flex:1;
-	background-color:#423630;
-	color:#423630;
-	display:flex;
-	flex-direction:column;
-	align-items:center;
-	justify-content:space-between
-}
-.f_menu_list{
-	flex:1;
-	display:flex;
-	flex-direction:column;
-	margin-top:45px;
-	
-}
-.f_menu_list:last-child{
-	justify-content:flex-end
-}
-
 .friends_list {
 	flex:9;
 	background-color:#fff;
@@ -54,6 +34,7 @@
 
 .f_list_main_title{
 	color: #C3C3C3;
+	font-weight:600;
 }
 
 .f_main_user{

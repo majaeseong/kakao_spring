@@ -1,0 +1,31 @@
+.more {
+	display:flex;
+	flex-direction:row;
+	height:100%
+}
+
+.more_main{
+	flex:9;
+	background-color:white;
+}
+
+.more_header{
+	border-bottom : 1px solid #F2F2F2;
+	
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	padding:15px 10px;
+}
+.more_header_title{
+	font-weight:600;
+	font-size:20px;
+}
+.more_header_version{
+	color:#2F2F2F;
+}
+
+.more_logo{
+	display:flex;
+	justify-content:center;
+}
