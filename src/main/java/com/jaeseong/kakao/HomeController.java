@@ -23,22 +23,51 @@ public class HomeController {
 	@RequestMapping(value = "/friends", method = RequestMethod.GET)
 	public String friends(Model model) {
 		
+		model.addAttribute("select_menu", 1);
+		
 		return "friends";
+		
+	}
+	
+	@RequestMapping(value = "/profile", method = RequestMethod.GET)
+	public String profile(Model model) {
+		
+		return "profile";
 		
 	}
 	
 	@RequestMapping(value = "/chats", method = RequestMethod.GET)
 	public String chats(Model model) {
 		
+		model.addAttribute("select_menu", 2);
+		
 		return "chats";
+		
+	}
+	
+	@RequestMapping(value = "/chat", method = RequestMethod.GET)
+	public String chat(Model model) {
+		
+		return "chat";
 		
 	}
 	
 	@RequestMapping(value = "/more", method = RequestMethod.GET)
 	public String more(Model model) {
 		
+		model.addAttribute("select_menu", 3);
+		
 		return "more";
 		
 	}
+	
+	@RequestMapping(value = "/setting", method = RequestMethod.GET)
+	public String setting(Model model) {
+		
+		model.addAttribute("select_menu", 4);
+		
+		return "setting";
+		
+	}	
 	
 }

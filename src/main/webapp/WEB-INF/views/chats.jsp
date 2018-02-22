@@ -16,7 +16,7 @@
 			</div>
 			<div class="chats_scroll">
 				<div class="chats_main">
-					<a href="">
+					<a href="chat">
 						<div class="chats_chat">
 							<div class="chats_user_image">
 								<img src="resources/images/avartar.jpg">

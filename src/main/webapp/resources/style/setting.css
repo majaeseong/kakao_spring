@@ -1,0 +1,64 @@
+.setting {
+	display:flex;
+	flex-direction:row;
+	height:100%
+}
+
+.setting_main{
+	flex:9;
+	background-color:white;
+}
+
+.setting_header{
+	margin : 15px;
+}
+.setting_header_title{
+	font-weight:600;
+	font-size:20px;
+}
+.setting_profile{
+	display:flex;
+	flex-direction:column;
+}
+.setting_profile_image{
+	display:flex;
+	margin:15px;
+}
+.setting_name{
+	color:#666666;
+}
+.set_name{
+	padding:5px;
+	width:150px;
+	height:25px;
+	font-size:15px;
+	border-radius:5px;
+	border-width:1px;
+	
+}
+.setting_profile_image img{
+	height:70px;
+	border-radius:50%;
+	margin-right:15px;
+}
+
+.setting_profile_status{
+	margin:15px;
+}
+.setting_profile_status_title{
+	margin-bottom:10px;
+}
+.setting_status{
+	border-radius:5px;
+	border-width:1px;
+	resize:none;
+}
+
+.setting_submit_button{
+	border-radius:20px;
+	width:100px;
+	height:30px;
+	font-size:15px;
+	margin-left:100px;
+	
+}

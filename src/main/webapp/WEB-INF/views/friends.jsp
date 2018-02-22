@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <html>
 <head>
 <title>Friends</title>
@@ -16,7 +16,7 @@
 			<div class="f_main_list">
 				<span class="f_list_main_title">My Profile</span>
 			</div>	
-			<a href="#">
+			<a href="profile">
 				<div class="f_main_user">
 					<div class="f_main_user_image"><img src="resources/images/avartar.jpg">Jaewon</div>
 					<div class="f_main_user_status">Status Message</div>
@@ -26,10 +26,13 @@
 			<div class="f_main_list">
 				<span class="f_list_main_title">Friends</span>
 			</div>
-			<div class="f_main_user">
-				<div class="f_main_user_image"><img src="resources/images/avartar.jpg">    Name</div>
-				<div class="f_main_user_status">Status Message</div>
-			</div>
+			
+			<a href="profile">
+				<div class="f_main_user">
+					<div class="f_main_user_image"><img src="resources/images/avartar.jpg">    Name</div>
+					<div class="f_main_user_status">Status Message</div>
+				</div>
+			</a>
 		</div>
 	</div>
 	</main>
