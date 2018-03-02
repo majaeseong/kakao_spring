@@ -16,24 +16,28 @@
 			</div>
 			<div class="chats_scroll">
 				<div class="chats_main">
-					<a href="chat">
+				
+					<c:forEach var="l" items="${chats_list }">
+					<a href="chat?id=${l.id }">
 						<div class="chats_chat">
 							<div class="chats_user_image">
 								<img src="resources/images/avartar.jpg">
 								<div class="chats_user_name_content">
 									<div class="chats_user_name">
-										Mina
+										${l.name}
 									</div>
 									<div class="chats_user_content">
-										Hello, Jaewon
+										${l.content }
 									</div>
 								</div>
 							</div>
 							<div class="chats_user_time">
-								19:38
+								${l.r_time }
 							</div>
 						</div>
 					</a>
+					</c:forEach>
+					
 				</div>
 			</div>
 		</div>

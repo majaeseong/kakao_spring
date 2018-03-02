@@ -23,6 +23,28 @@
 	
 	<context:component-scan base-package="com.jaeseong.kakao" />
 	
+	<context:property-placeholder location="/WEB-INF/config.properties"/>
+	
+	<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+      <beans:property name="driverClassName" value="${jdbc.driverClass}" />
+      <beans:property name="url" value="${jdbc.url}" />
+      <beans:property name="username" value="${jdbc.username}" />
+      <beans:property name="password" value="${jdbc.password}" />
+      <beans:property name="validationQuery" value="SELECT 1"/>
+      <beans:property name="testOnBorrow" value="true"/>
+   </beans:bean>
+   
+   <beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+      <beans:property name="dataSource" ref="dataSource" />
+      <beans:property name="typeAliasesPackage" value="com.jaeseong.kakao"/>
+      <beans:property name="mapperLocations" value="classpath:com/jaeseong/kakao/**/*.xml"/>      
+   </beans:bean>			
+   
+   <beans:bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+      <beans:property name="basePackage" value="com.jaeseong.kakao" />
+      <beans:property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+   </beans:bean>
+	
 	
 	
 </beans:beans>

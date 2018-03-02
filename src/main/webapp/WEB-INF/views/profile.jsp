@@ -11,7 +11,7 @@
 		</div>
 		<div class="profile_menu">
 			<div class="profile_bottom">
-				<div class="profile_name">Jaewon</div>
+				<div class="profile_name">${profile_member.name }</div>
 				<div class="profile_menu_options">
 					<div class="profile_menu_option">
 						<i class="fa fa-comment"></i>
