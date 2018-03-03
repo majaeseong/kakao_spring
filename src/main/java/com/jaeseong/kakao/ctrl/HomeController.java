@@ -1,5 +1,6 @@
 package com.jaeseong.kakao.ctrl;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,7 +69,7 @@ public class HomeController {
 		
 		if(session.getAttribute("login_user")==null) {
 			model.addAttribute("msg", "Must Login for use this app");
-			return "redirect:login";
+			return "login";
 		}
 		MemberDTO mdto = (MemberDTO) session.getAttribute("login_user");
 		model.addAttribute("login_member", mservice.getMemberbyId(mdto.getId()));
@@ -85,7 +86,7 @@ public class HomeController {
 		
 		if(session.getAttribute("login_user")==null) {
 			model.addAttribute("msg", "Must Login for use this app");
-			return "redirect:login";
+			return "login";
 		}
 		
 		model.addAttribute("login_member", session.getAttribute("login_user"));
@@ -100,7 +101,7 @@ public class HomeController {
 		
 		if(session.getAttribute("login_user")==null) {
 			model.addAttribute("msg", "Must Login for use this app");
-			return "redirect:login";
+			return "login";
 		}
 		
 		MemberDTO mdto = (MemberDTO) session.getAttribute("login_user");
@@ -116,7 +117,7 @@ public class HomeController {
 		
 		if(session.getAttribute("login_user")==null) {
 			model.addAttribute("msg", "Must Login for use this app");
-			return "redirect:login";
+			return "login";
 		}
 		
 		MemberDTO mdto = (MemberDTO) session.getAttribute("login_user");
@@ -176,12 +177,16 @@ public class HomeController {
 	@RequestMapping(value="/logout")
 	public String logout(Model model, HttpSession session) {
 		
-		if(session!=null)
+		if(session!=null) {
 			session.invalidate();
+			
+			model.addAttribute("msg", "Success Logout safely, Please Meet again!");
+		}else {
+			return "redirect:login";
+		}
 		
-		model.addAttribute("msg", "Success Logout safely, Please Meet again!");
 
-		return "redirect:login";
+		return "login";
 	}
 	
 }

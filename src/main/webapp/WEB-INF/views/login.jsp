@@ -4,7 +4,7 @@
 	<title>Login</title>
 	<link href="resources/style/styles.css" rel="stylesheet" type="text/css">
 </head>
-<body onload="pop_msg()">
+<body>
 	<main class="login">
 		<div class="login_column">
 			<img src="resources/images/kakao.png">
@@ -22,13 +22,22 @@
 	</main>
 	<input type="hidden" id="msg" value="${msg }">
 	
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	
 	<script type="text/javascript">
-		function pop_msg(){
+		/* function pop_msg(){
 			var str = document.getElementById('msg').value;
 			if(str.length>0){
 				alert(str);
 			}
-		}
+		} */
+		$(document).ready(function() { 
+			var str = document.getElementById('msg').value;
+			if(str.length>0){
+				alert(str);
+			}
+		});
 		
 		function pop_check(){
 			var userid = document.getElementById('userid').value;
