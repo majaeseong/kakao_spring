@@ -36,12 +36,15 @@ public class ChattingSerivce {
 			cldto.setId(i);	cldto.setName(mdto.getName()); cldto.setContent(cdto.getContent());
 			cldto.setImages(mdto.getImages()); cldto.setR_time(cdto.getR_time());
 			
-			
 			chats_list.add(cldto);
 		}
 		
 		return chats_list;
 		
+	}
+	
+	public List<ChattingDTO> getAllchatting(int id_1, int id_2){
+		return mapper.getAllchatting(id_1, id_2);
 	}
 
 }

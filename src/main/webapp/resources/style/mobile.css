@@ -1,0 +1,22 @@
+@media screen and (min-width: 545px) {
+  .big_screen_text {
+    display: flex;
+  }
+}
+@media screen and (max-width:650px){
+	.big_screen_text {
+    display: flex;
+  }
+}
+ 
+ @media screen and (min-height:600px){
+	 .big_screen_text {
+	    display: flex;
+	  }
+ }
+ 
+ @media screen and (max-height:750px){
+	 .big_screen_text {
+	    display: flex;
+	  }
+ }

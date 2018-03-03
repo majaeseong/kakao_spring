@@ -12,4 +12,10 @@
 		select max(id) from member
 	</select>
 	
+	<select id="getAllchatting" resultType="ChattingDTO">
+		select * from chatting
+		where (send_id=#{id_1} and res_id=#{id_2}) or (send_id=#{id_2} and res_id=#{id_1})
+		order by r_time desc
+	</select>
+	
 </mapper>

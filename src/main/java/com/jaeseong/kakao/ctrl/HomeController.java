@@ -23,13 +23,21 @@ public class HomeController {
 	ChattingSerivce cservice;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String go_login(Model model) {
+	public String go_login(Model model, HttpSession session) {
+		
+		if(session.getAttribute("login_user")!=null) {
+			return "redirect:friends";
+		}
 		
 		return "redirect:login";
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String home(Model model) {
+	public String home(Model model, HttpSession session) {
+		
+		if(session.getAttribute("login_user")!=null) {
+			return "redirect:friends";
+		}
 		
 		return "login";
 	}
@@ -61,8 +69,8 @@ public class HomeController {
 			model.addAttribute("msg", "Must Login for use this app");
 			return "redirect:login";
 		}
-		
-		model.addAttribute("login_member", session.getAttribute("login_user"));
+		MemberDTO mdto = (MemberDTO) session.getAttribute("login_user");
+		model.addAttribute("login_member", mservice.getMemberbyId(mdto.getId()));
 		model.addAttribute("friends_list", mservice.getFriends((MemberDTO)session.getAttribute("login_user")));
 		
 		model.addAttribute("select_menu", 1);
@@ -79,6 +87,7 @@ public class HomeController {
 			return "redirect:login";
 		}
 		
+		model.addAttribute("login_member", session.getAttribute("login_user"));
 		model.addAttribute("profile_member", mservice.getMemberbyId(id));
 		
 		return "profile";
@@ -94,9 +103,7 @@ public class HomeController {
 		}
 		
 		MemberDTO mdto = (MemberDTO) session.getAttribute("login_user");
-		
 		model.addAttribute("chats_list", cservice.getAllChatList(mdto.getId()));
-		
 		model.addAttribute("select_menu", 2);
 		
 		return "chats";
@@ -110,6 +117,12 @@ public class HomeController {
 			model.addAttribute("msg", "Must Login for use this app");
 			return "redirect:login";
 		}
+		
+		MemberDTO mdto = (MemberDTO) session.getAttribute("login_user");
+		
+		model.addAttribute("chatList", cservice.getAllchatting(mdto.getId(),id));
+		model.addAttribute("contact_member", mservice.getMemberbyId(id));
+		model.addAttribute("login_member", mdto); //login user
 		
 		return "chat";
 		
@@ -125,12 +138,37 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/setting", method = RequestMethod.GET)
-	public String setting(Model model) {
+	public String setting(Model model, HttpSession session) {
 		
+		if(session.getAttribute("login_user")==null) {
+			model.addAttribute("msg", "Must Login for use this app");
+			return "redirect:login";
+		}
+		MemberDTO mdto = (MemberDTO) session.getAttribute("login_user");
+		model.addAttribute("login_member", mservice.getMemberbyId(mdto.getId()));
 		model.addAttribute("select_menu", 4);
 		
 		return "setting";
 		
-	}	
+	}
+	
+	@RequestMapping(value="/edit_profile", method=RequestMethod.POST)
+	public String edit_profile(MemberDTO mdto) {
+		
+		mservice.edit_profile(mdto);
+
+		return "redirect:setting";
+	}
+	
+	@RequestMapping(value="/logout")
+	public String logout(Model model, HttpSession session) {
+		
+		if(session!=null)
+			session.invalidate();
+		
+		model.addAttribute("msg", "Success Logout safely, Please Meet again!");
+
+		return "redirect:login";
+	}
 	
 }

@@ -41,4 +41,7 @@ public class MemberService {
 	public List<MemberDTO> getFriends(MemberDTO mdto){
 		return mapper.getFriends(mdto);
 	}
+	public void edit_profile(MemberDTO mdto) {
+		mapper.edit_profile(mdto);
+	}
 }

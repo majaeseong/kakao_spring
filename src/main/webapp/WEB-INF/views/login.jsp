@@ -45,5 +45,8 @@
 			
 		}
 	</script>
+	
+	
+	<%@include file="screensaver.jsp" %>
 </body>
 </html>

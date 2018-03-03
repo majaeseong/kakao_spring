@@ -12,4 +12,10 @@
 	<select id="getFriends" parameterType="MemberDTO" resultType="MemberDTO">
 		<![CDATA[ select * from member where id <> #{id}  ]]>
 	</select>
+	
+	<update id="edit_profile" parameterType="MemberDTO">
+		update member set name=#{name}, statusmsg=#{statusmsg}
+		where id=#{id}
+	</update>
+	
 </mapper>

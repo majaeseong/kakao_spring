@@ -6,6 +6,7 @@ public class ChattingDTO {
 	private int id, send_id, res_id;
 	private String content;
 	private Timestamp r_time;
+	
 	public int getId() {
 		return id;
 	}

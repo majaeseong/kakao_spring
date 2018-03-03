@@ -38,5 +38,7 @@
 		</div>
 	</div>
 	</main>
+	
+	<%@include file="screensaver.jsp" %>
 </body>
 </html>
