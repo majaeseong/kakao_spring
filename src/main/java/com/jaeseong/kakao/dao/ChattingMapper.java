@@ -10,6 +10,6 @@ public interface ChattingMapper {
 	public ChattingDTO getAllChats(@Param("id_1") int id_1, @Param("id_2") int id_2);
 	public int getMaxId();
 	public List<ChattingDTO> getAllchatting(@Param("id_1") int id_1, @Param("id_2") int id_2);
-	
+	public void addChatText(ChattingDTO cdto);
 
 }

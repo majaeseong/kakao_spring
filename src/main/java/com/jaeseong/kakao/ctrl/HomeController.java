@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.jaeseong.kakao.dto.ChattingDTO;
 import com.jaeseong.kakao.dto.MemberDTO;
 import com.jaeseong.kakao.service.ChattingSerivce;
 import com.jaeseong.kakao.service.MemberService;
@@ -127,6 +128,18 @@ public class HomeController {
 		return "chat";
 		
 	}
+	
+	@RequestMapping(value = "/addChatText")
+	public String addChatText(Model model,ChattingDTO cdto) {
+		
+		cservice.addChatText(cdto);
+		model.addAttribute("id", cdto.getRes_id());
+		
+		return "redirect:chat";
+		
+	}
+	
+	
 	
 	@RequestMapping(value = "/more", method = RequestMethod.GET)
 	public String more(Model model) {

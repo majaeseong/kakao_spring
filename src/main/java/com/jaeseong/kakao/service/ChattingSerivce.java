@@ -46,5 +46,9 @@ public class ChattingSerivce {
 	public List<ChattingDTO> getAllchatting(int id_1, int id_2){
 		return mapper.getAllchatting(id_1, id_2);
 	}
+	
+	public void addChatText(ChattingDTO cdto) {
+		mapper.addChatText(cdto);
+	}
 
 }

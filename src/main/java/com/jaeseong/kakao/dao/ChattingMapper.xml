@@ -4,7 +4,7 @@
 	<select id="getAllChats" resultType="ChattingDTO">
 		select * from chatting
 		where (send_id=#{id_1} and res_id=#{id_2}) or (send_id=#{id_2} and res_id=#{id_1})
-		order by r_time desc
+		order by r_time asc
 		limit 1
 	</select>
 	
@@ -15,7 +15,12 @@
 	<select id="getAllchatting" resultType="ChattingDTO">
 		select * from chatting
 		where (send_id=#{id_1} and res_id=#{id_2}) or (send_id=#{id_2} and res_id=#{id_1})
-		order by r_time desc
+		order by r_time asc
 	</select>
+	
+	<insert id="addChatText" parameterType="ChattingDTO">
+		insert into chatting(send_id, res_id, content)
+		values (#{send_id}, #{res_id}, #{content})
+	</insert>
 	
 </mapper>

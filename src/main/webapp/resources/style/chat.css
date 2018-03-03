@@ -52,16 +52,16 @@
 	overflow-y:auto;
 	display:flex;
 	flex-direction:column;
+	background-color:#BED1DB;
+	margin-bottom:55px;
 }
 .chat_main{
 	flex:8;
-	background-color:#BED1DB;
-	
 	position:absolute;
 	top:80px;
-	height:80vh;
+	height:85vh;
 	width:100%;
-	margin-bottom:55px;
+	background-color:#BED1DB;
 	
 }
 .contact_person_msg{
@@ -100,22 +100,21 @@
 	flex:1;
 	display:flex;
 	align-items:center;
-	background-color:white;
+	background-color:#BED1DB;
 	z-index:3;
 	position:fixed;
 	bottom:0;
 	width:100%;
 }
 .chat_input_text{
-	width:80%;
-	margin-left:10px;
+	width:100%;
 	border-radius:5px;
 	font-size:10px;
 	resize:none;
 }
 .chat_input_button{
 	width:20%;
-	height:100%;
-	font-size:50px;
+	height:40%;
+	font-size:20px;
 	padding: 50px 50px;
 }
