@@ -8,6 +8,11 @@
 <body>
 	<main class="chat">
 	<div class="chat_header">
+		<a href="chats">
+			<div class="back_arrow">
+				<i class="fa fa-arrow-left"></i>
+			</div>
+		</a>
 		<div class="contact_person">
 			<img src="resources/images/avartar.jpg">
 			<div class="contact_person_main">
