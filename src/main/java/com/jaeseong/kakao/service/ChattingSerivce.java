@@ -51,4 +51,9 @@ public class ChattingSerivce {
 		mapper.addChatText(cdto);
 	}
 
+	public int getLastChat(int id_1, int id_2) {
+		
+		return mapper.getLastChat(id_1,id_2);
+	}
+
 }

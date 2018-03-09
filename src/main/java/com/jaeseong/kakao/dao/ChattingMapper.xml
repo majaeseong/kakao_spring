@@ -23,4 +23,9 @@
 		values (#{send_id}, #{res_id}, #{content})
 	</insert>
 	
+	<select id="getLastChat" resultType="int">
+		select max(id) from chatting
+		where (send_id=#{id_1} and res_id=#{id_2}) or (send_id=#{id_2} and res_id=#{id_1})
+	</select>
+	
 </mapper>
